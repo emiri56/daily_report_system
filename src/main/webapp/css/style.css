@@ -1,5 +1,3 @@
-@CHARSET "UTF-8";
-
 body {
     color: #333333;
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
@@ -143,12 +141,19 @@ table#report_list .report_date {
 }
 
 table#report_list .report_title {
-    width: 37%;
+    width: 35%;
 }
 
 table#report_list .report_action {
-    width: 13%;
+    width: 15%;
+}
+table#report_list .report_good {
+    width: 10%;
 }
 h3 {
     font-size: larger;
+}
+img.good{
+    width : 10px;
+    height : 10px;
 }

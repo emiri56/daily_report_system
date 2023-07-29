@@ -40,6 +40,8 @@
             </tbody>
         </table>
 
+        <p><img src="https://gyazo.com/c6a38d8f5635dde9ea5875e93d8340f4" alt="いいね" /></p>
+
         <c:if test="${sessionScope.login_employee.id == report.employee.id}">
             <p>
                 <a href="<c:url value='?action=${actRep}&command=${commEdt}&id=${report.id}' />">この日報を編集する</a>
