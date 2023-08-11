@@ -3,6 +3,8 @@ package actions.views;
 import java.util.ArrayList;
 import java.util.List;
 
+import constants.AttributeConst;
+import constants.JpaConst;
 import models.Report;
 
 /**
@@ -24,7 +26,12 @@ public class ReportConverter {
                 rv.getTitle(),
                 rv.getContent(),
                 rv.getCreatedAt(),
-                rv.getUpdatedAt());
+                rv.getUpdatedAt(),
+                rv.getGoodFlag() == null
+                        ? null
+                        : rv.getGoodFlag() == AttributeConst.GOOD_FLAG_TRUE.getIntegerValue()
+                                ? JpaConst.REP_GOOD_TRUE
+                                : JpaConst.REP_GOOD_FALSE);
     }
 
     /**
@@ -45,12 +52,17 @@ public class ReportConverter {
                 r.getTitle(),
                 r.getContent(),
                 r.getCreatedAt(),
-                r.getUpdatedAt());
+                r.getUpdatedAt(),
+                r.getGoodFlag() == null
+                        ? null
+                        : r.getGoodFlag() == JpaConst.REP_GOOD_TRUE
+                                ? AttributeConst.GOOD_FLAG_TRUE.getIntegerValue()
+                                : AttributeConst.GOOD_FLAG_FALSE.getIntegerValue());
     }
 
     /**
      * DTOモデルのリストからViewモデルのリストを作成する
-     * @param list DTOモデルのリスト
+     * @param list DTOモデルのリストAttributeConst
      * @return Viewモデルのリスト
      */
     public static List<ReportView> toViewList(List<Report> list) {
@@ -76,6 +88,7 @@ public class ReportConverter {
         r.setContent(rv.getContent());
         r.setCreatedAt(rv.getCreatedAt());
         r.setUpdatedAt(rv.getUpdatedAt());
+        r.setGoodFlag(rv.getGoodFlag());
     }
 
 }

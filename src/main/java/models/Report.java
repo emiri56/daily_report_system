@@ -98,4 +98,7 @@ public class Report {
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)//"updated_at";
     private LocalDateTime updatedAt;
 
+    @Column(name = JpaConst.REP_COL_GOOD_FLAG, nullable = false)
+    private Integer goodFlag;
+
 }

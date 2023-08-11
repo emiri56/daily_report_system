@@ -114,7 +114,7 @@ public class ReportAction extends ActionBase {
                     getRequestParam(AttributeConst.REP_TITLE),
                     getRequestParam(AttributeConst.REP_CONTENT),
                     null,
-                    null);
+                    null, AttributeConst.GOOD_FLAG_FALSE.getIntegerValue());
 
             //日報情報登録
             List<String> errors = service.create(rv);
@@ -234,6 +234,24 @@ public class ReportAction extends ActionBase {
 
             }
         }
+    }
+
+    /**
+     * いいねを行う
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void good() throws ServletException, IOException{
+        ReportView rv = service.findOne(toNumber(getRequestParam(AttributeConst.REP_ID)));
+
+        if(rv.getGoodFlag() == AttributeConst.GOOD_FLAG_FALSE.getIntegerValue()) {
+            service.good(toNumber(getRequestParam(AttributeConst.REP_ID)));
+            redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
+        } else {
+            service.notgood(toNumber(getRequestParam(AttributeConst.REP_ID)));
+            redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
+        }
+
     }
 
 }

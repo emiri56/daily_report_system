@@ -37,10 +37,6 @@ public enum AttributeConst {
     DEL_FLAG_TRUE(1),
     DEL_FLAG_FALSE(0),
 
-    //いいねフラグ
-    GOOD_FLAG_TRUE(1),
-    GOOD_FLAG_FALSE(0),
-
     //日報管理
     REPORT("report"),
     REPORTS("reports"),
@@ -48,7 +44,12 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content_msg");
+    REP_CONTENT("content_msg"),
+    REP_GOOD_FLG("good_flag"),
+
+    //いいねフラグ
+    GOOD_FLAG_TRUE(1),
+    GOOD_FLAG_FALSE(0);
 
     private final String text;
     private final Integer i;

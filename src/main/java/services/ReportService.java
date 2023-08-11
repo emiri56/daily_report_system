@@ -154,4 +154,16 @@ public class ReportService extends ServiceBase {
 
     }
 
+    //いいね
+    public void good(Integer id) {
+        ReportView savedRep = findOne(id);
+        savedRep.setGoodFlag(JpaConst.REP_GOOD_TRUE);
+        update(savedRep);
+    }
+
+    public void notgood(Integer id) {
+        ReportView savedRep = findOne(id);
+        savedRep.setGoodFlag(JpaConst.REP_GOOD_FALSE);
+        update(savedRep);
+    }
 }

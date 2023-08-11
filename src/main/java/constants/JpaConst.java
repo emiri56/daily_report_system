@@ -44,6 +44,9 @@ public interface JpaConst {
     int REP_GOOD_TRUE = 1;//いいね
     int REP_GOOD_FALSE = 0;//notいいね
 
+    //いいねテーブル
+    String TABLE_GOOD = "employee_report";
+
     //Entity名
     String ENTITY_EMP = "employee"; //従業員
     String ENTITY_REP = "report"; //日報
